@@ -20,7 +20,7 @@ jobs:
     - name: Copy schema
       run: |
         ls -a
-        mkdir -p contract/product_names
+        mkdir -p contract/$PROJECT_NAME
         cp $DOMAIN_NAME/models/marts/contracts/* contract/$PROJECT_NAME/*
         
 
