@@ -21,7 +21,7 @@ jobs:
       run: |
         ls -a
         mkdir -p contract/product_names
-        cp $DOMAIN_NAME/models/marts/contracts/* contract/$PROJECT_NAME/orders.yml
+        cp $DOMAIN_NAME/models/marts/contracts/* contract/$PROJECT_NAME/*
         
 
     - name: Commit changes
