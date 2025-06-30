@@ -3,13 +3,13 @@ name: Push Contract to Repo
 
 on: [push]
 
-env:
-PROJECT_NAME: "product6" 
-DOMAIN_NAME: "domain6"
+
 jobs:
   push_contract:
     runs-on: ubuntu-latest
-
+    env:
+      PROJECT_NAME: "product6"
+      DOMAIN_NAME: "domain6"
     steps:
     - name: Checkout repo
       uses: actions/checkout@v2
