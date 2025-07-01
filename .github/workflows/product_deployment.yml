@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 env:
-  PROJECT_NAME: "domain6" 
+  PROJECT_NAME: "product6" 
 
 jobs:
   build:
@@ -33,6 +33,7 @@ jobs:
         run: |
           source venv/bin/activate
           cd $PROJECT_NAME/
+          dbt deps --profiles-dir ./
           dbt docs generate --profiles-dir ./
           mkdir -p ${{ github.workspace }}/docs
           cp -r target/* ${{ github.workspace }}/docs/
@@ -64,4 +65,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
